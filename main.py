@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import webserver
 import os
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -101,5 +102,6 @@ def start_server():
 threading.Thread(target=start_server, daemon=True).start()
 print("HTTP server started on port 8080")
 
-# Get bot token from environment variable
-bot.run(os.environ["DISCORD_BOT_TOKEN"])
+bot_token = os.environ["DISCORD_BOT_TOKEN"]
+webserver.keep_alive()
+bot.run(bot_token)
