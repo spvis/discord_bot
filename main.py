@@ -22,6 +22,10 @@ VERIFIED_ROLE_NAME = "Verified"
 async def on_ready():
     print(f"✅ Logged in as {bot.user} (ID: {bot.user.id})")
     print("------")
+    
+    # Set a stupid custom status
+    await bot.change_presence(activity=discord.Game(name="something idfk"))
+    
     # Sync slash commands
     try:
         synced = await bot.tree.sync()
