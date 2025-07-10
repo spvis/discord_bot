@@ -91,7 +91,7 @@ class HealthHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/plain')
         self.send_header('Content-Length', '15')
         self.end_headers()
-        self.wfile.write(b'Bot is running!')
+        self.wfile.write(b'Bot is running!!')
 
     def do_HEAD(self):
         """Handle HEAD requests (used by UptimeRobot and other monitoring services)"""
